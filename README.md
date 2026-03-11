@@ -153,11 +153,10 @@ Then opens the top DuckDuckGo result for `"{topic} best practices tutorial"`.
 
 If Dopamine made your coding sessions more fun (or more productive), consider buying me a coffee:
 
-**BTC:** `15FgAxLWXSQimGUVyH2eGzDpLzZHHmLhWG`
-
-**ETH (ERC-20):** `0xa6ba31dd11cd5943c5ca4a7d7aaf433a0892d7e6`
-
-**USDT (TRC-20):** `THJfpf9MmsNqjr8AWvp5gu88gSS6SawrZU`
+| BTC | ETH (ERC-20) | USDT (TRC-20) |
+|:---:|:---:|:---:|
+| <img src="assets/qr_btc.png" width="150"> | <img src="assets/qr_eth.png" width="150"> | <img src="assets/qr_usdt_trc20.png" width="150"> |
+| `15FgAxLWXSQimGUVyH2eGzDpLzZHHmLhWG` | `0xa6ba31dd11cd5943c5ca4a7d7aaf433a0892d7e6` | `THJfpf9MmsNqjr8AWvp5gu88gSS6SawrZU` |
 
 ## License
 
