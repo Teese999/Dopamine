@@ -3,12 +3,17 @@
   "owner": {
     "name": "Teese999"
   },
+  "metadata": {
+    "description": "Watch Shorts while Claude works. Read articles while Claude codes.",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "dopamine",
-      "source": ".",
+      "source": "./",
       "description": "Watch Shorts while Claude works. Read articles while Claude codes.",
-      "version": "1.0.0"
+      "strict": false,
+      "skills": []
     }
   ]
 }
