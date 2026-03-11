@@ -26,6 +26,18 @@ You ask Claude to do something
 
 ## Install
 
+### As a Claude Code Plugin (recommended)
+
+```bash
+# 1. Add the marketplace
+/plugin marketplace add Teese999/Dopamine
+
+# 2. Install the plugin
+/plugin install dopamine
+```
+
+### Manual Install
+
 ```bash
 # 1. Copy the hook script
 mkdir -p ~/.claude/hooks
@@ -81,16 +93,24 @@ python3 ~/.claude/hooks/entertainment.py login
 
 ## Usage
 
+### Slash Commands (plugin install)
+
+```
+/dopamine degrade     # 📉 Shorts/Reels
+/dopamine progress    # 📈 Useful articles
+/dopamine shorts      # Set source: YouTube Shorts
+/dopamine reels       # Set source: Instagram Reels
+/dopamine login       # Log in to YouTube & Instagram
+/dopamine             # Show current settings
+```
+
+### CLI (manual install)
+
 ```bash
-# Switch modes
-python3 ~/.claude/hooks/entertainment.py mode degrade     # 📉 Shorts/Reels
-python3 ~/.claude/hooks/entertainment.py mode progress    # 📈 Useful articles
-
-# Change degrade source
-python3 ~/.claude/hooks/entertainment.py setup shorts     # YouTube Shorts (default)
-python3 ~/.claude/hooks/entertainment.py setup reels      # Instagram Reels
-
-# Log in to services
+python3 ~/.claude/hooks/entertainment.py mode degrade
+python3 ~/.claude/hooks/entertainment.py mode progress
+python3 ~/.claude/hooks/entertainment.py setup shorts
+python3 ~/.claude/hooks/entertainment.py setup reels
 python3 ~/.claude/hooks/entertainment.py login
 ```
 
