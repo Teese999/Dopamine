@@ -149,6 +149,12 @@ Dopamine reads the tool input that Claude is currently processing and extracts:
 
 Then opens the top DuckDuckGo result for `"{topic} best practices tutorial"`.
 
+## Support the Project
+
+If Dopamine made your coding sessions more fun (or more productive), consider buying me a coffee:
+
+**ETH (ERC-20):** `0xa6ba31dd11cd5943c5ca4a7d7aaf433a0892d7e6`
+
 ## License
 
 MIT
