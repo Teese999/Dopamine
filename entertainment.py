@@ -68,6 +68,25 @@ def save_config(cfg):
         json.dump(cfg, f)
 
 
+STALE_THRESHOLD = 3 * 3600  # 3 hours
+
+
+def cleanup_stale_sessions():
+    """Remove state files older than STALE_THRESHOLD."""
+    if not os.path.isdir(STATE_DIR):
+        return
+    now = time.time()
+    for name in os.listdir(STATE_DIR):
+        if not name.startswith("session_"):
+            continue
+        path = os.path.join(STATE_DIR, name)
+        try:
+            if now - os.path.getmtime(path) > STALE_THRESHOLD:
+                os.remove(path)
+        except OSError:
+            pass
+
+
 def is_open(session_id):
     return os.path.exists(state_file(session_id))
 
@@ -75,7 +94,7 @@ def is_open(session_id):
 def mark_open(session_id, url, mode, pid=None):
     os.makedirs(STATE_DIR, exist_ok=True)
     with open(state_file(session_id), "w") as f:
-        json.dump({"url": url, "pid": pid, "mode": mode}, f)
+        json.dump({"url": url, "pid": pid, "mode": mode, "ts": time.time()}, f)
 
 
 def mark_closed(session_id):
@@ -524,6 +543,7 @@ def close_window(url):
 # --- Main logic ---
 
 def open_entertainment(session_id, tool_input=None):
+    cleanup_stale_sessions()
     if is_open(session_id):
         return
 
