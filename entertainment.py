@@ -542,9 +542,23 @@ def close_window(url):
 
 # --- Main logic ---
 
+def _try_lock(session_id):
+    """Atomic lock: create state file exclusively. Returns True if we got the lock."""
+    os.makedirs(STATE_DIR, exist_ok=True)
+    path = state_file(session_id)
+    try:
+        fd = os.open(path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        os.close(fd)
+        return True
+    except FileExistsError:
+        return False
+
+
 def open_entertainment(session_id, tool_input=None):
     cleanup_stale_sessions()
     if is_open(session_id):
+        return
+    if not _try_lock(session_id):
         return
 
     cfg = load_config()
