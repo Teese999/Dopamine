@@ -157,6 +157,8 @@ If Dopamine made your coding sessions more fun (or more productive), consider bu
 
 **ETH (ERC-20):** `0xa6ba31dd11cd5943c5ca4a7d7aaf433a0892d7e6`
 
+**USDT (TRC-20):** `THJfpf9MmsNqjr8AWvp5gu88gSS6SawrZU`
+
 ## License
 
 MIT
